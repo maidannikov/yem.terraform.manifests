@@ -25,6 +25,6 @@ resource "github_repository" "Sitecore-DesignSystem-Blok" {
   squash_merge_commit_message             = "COMMIT_MESSAGES"
   squash_merge_commit_title               = "COMMIT_OR_PR_TITLE"
   topics                                  = []
-  visibility                              = "internal"
+  visibility                              = "public"
   vulnerability_alerts                    = false
 }
