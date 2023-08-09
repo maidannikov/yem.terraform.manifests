@@ -1,6 +1,6 @@
 import {
-  id = "whalescan"
-  to = github_repository.whalescan
+  id = "Simple_cv"
+  to = github_repository.Simple_cv
 }
 
 
