@@ -1,8 +1,3 @@
-import {
-  id = "docker"
-  to = github_repository.docker
-}
-
 resource "github_repository" "docker" {
   allow_auto_merge                        = false
   allow_merge_commit                      = true
