@@ -1,10 +1,10 @@
-resource "github_repository" "foo" {
-  name      = "tf-acc-test-%s"
+resource "github_repository" "tf-acc-test" {
+  name      = "tf-acc-test"
   auto_init = true
 }
 
 resource "github_repository_file" "foo" {
-  repository          = github_repository.foo.name
+  repository          = github_repository.tf-acc-test.name
   branch              = "main"
   file                = ".gitignore"
   content             = "**/*.tfstate"
