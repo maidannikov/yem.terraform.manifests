@@ -1,3 +1,9 @@
+import {
+  id = "whalescan"
+  to = github_repository.whalescan
+}
+
+
 resource "github_repository" "docker" {
   allow_auto_merge                        = false
   allow_merge_commit                      = true
