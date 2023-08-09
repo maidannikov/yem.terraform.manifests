@@ -3,3 +3,5 @@ resource "github_actions_organization_variable" "example_variable" {
   visibility    = "private"
   value         = "example_variable_value"
 }
+
+# test commit
