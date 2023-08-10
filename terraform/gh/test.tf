@@ -17,7 +17,7 @@ resource "github_repository_file" "foo" {
 resource "github_repository_file" "foo2" {
   repository          = github_repository.tf-acc-test.name
   branch              = "main"
-  file                = ".gitignore"
+  file                = ".gitignore2"
   content             = "**/*.tfstate"
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
