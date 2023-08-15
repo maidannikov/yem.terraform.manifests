@@ -7,7 +7,7 @@ resource "github_repository" "Simple_cv" {
   archived                                = true
   auto_init                               = false
   delete_branch_on_merge                  = false
-  description                             = "Simple_CV_test"
+  description                             = "simple CV delivery project"
   has_discussions                         = false
   has_downloads                           = true
   has_issues                              = true
@@ -16,7 +16,7 @@ resource "github_repository" "Simple_cv" {
   is_template                             = false
   merge_commit_message                    = "PR_TITLE"
   merge_commit_title                      = "MERGE_MESSAGE"
-  name                                    = "Simple_cv"
+  name                                    = "test.project.simplecv"
   squash_merge_commit_message             = "COMMIT_MESSAGES"
   squash_merge_commit_title               = "COMMIT_OR_PR_TITLE"
   topics                                  = []
