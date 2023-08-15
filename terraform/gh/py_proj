@@ -7,7 +7,7 @@ resource "github_repository" "Py-reminder" {
   archived                                = true
   auto_init                               = false
   delete_branch_on_merge                  = false
-  description                             = "Py-reminder"
+  description                             = "Reminder for personal usage"
   has_discussions                         = false
   has_downloads                           = true
   has_issues                              = true
