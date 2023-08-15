@@ -4,7 +4,7 @@ resource "github_repository" "Py-reminder" {
   allow_rebase_merge                      = true
   allow_squash_merge                      = true
   allow_update_branch                     = false
-  archived                                = true
+  archived                                = false
   auto_init                               = false
   delete_branch_on_merge                  = false
   description                             = "Reminder for personal usage"
