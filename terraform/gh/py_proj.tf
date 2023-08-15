@@ -1,4 +1,4 @@
-resource "github_repository" "Py-reminder" {
+resource "github_repository" "python.reminder" {
   allow_auto_merge                        = false
   allow_merge_commit                      = true
   allow_rebase_merge                      = true
@@ -16,7 +16,7 @@ resource "github_repository" "Py-reminder" {
   is_template                             = false
   merge_commit_message                    = "PR_TITLE"
   merge_commit_title                      = "MERGE_MESSAGE"
-  name                                    = "Py-reminder"
+  name                                    = "python.advanced.reminder"
   squash_merge_commit_message             = "COMMIT_MESSAGES"
   squash_merge_commit_title               = "COMMIT_OR_PR_TITLE"
   topics                                  = []
