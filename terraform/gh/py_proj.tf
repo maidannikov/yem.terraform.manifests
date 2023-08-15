@@ -1,4 +1,4 @@
-resource "github_repository" "python.reminder" {
+resource "github_repository" "python_reminder" {
   allow_auto_merge                        = false
   allow_merge_commit                      = true
   allow_rebase_merge                      = true
