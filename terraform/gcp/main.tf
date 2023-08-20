@@ -13,4 +13,10 @@ resource "google_compute_instance" "vm_instance" {
     access_config {
     }
   }
+metadata_startup_script = <<-EOF
+    #!/bin/bash
+    apt-get update
+    apt-get install -y git
+    git clone https://github.com/Emaydannikov/python.advanced.reminder.git /home
+    EOF
 }
