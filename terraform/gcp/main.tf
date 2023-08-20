@@ -4,7 +4,7 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-12"
+      image = "ubuntu-os-cloud/ubuntu-2004-lts"
     }
   }
  network_interface {
@@ -17,6 +17,9 @@ metadata_startup_script = <<-EOF
     #!/bin/bash
     apt-get update
     apt-get install -y git
+    apt-get install -y pip
+    apt-get install -y python3-full
     git clone https://github.com/Emaydannikov/python.advanced.reminder.git /home
+    pip
     EOF
 }
