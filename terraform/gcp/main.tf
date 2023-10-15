@@ -20,8 +20,9 @@ metadata_startup_script = <<-EOF
     apt-get install -y pip
     apt-get install -y python3-full
     apt-get install -y sqlite3 
-    git clone https://github.com/Emaydannikov/python.advanced.reminder.git /home/py-bot/
-    pip install aiogram
+    git clone https://github.com/Emaydannikov/reminder.python.telegrambot.git /home/py-bot/
+    cd /home/py-bot/
+    pip install -r requirements.txt
     pip
     EOF
 }
