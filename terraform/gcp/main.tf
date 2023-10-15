@@ -46,7 +46,7 @@ Description=My Telegram Bot Service
 After=network.target
 
 [Service]
-User=YOUR_USERNAME
+User=root
 WorkingDirectory=/home/py-bot/
 ExecStart=/usr/bin/python3 /home/py-bot/bot.py
 Restart=always
