@@ -3,3 +3,8 @@ variable "GOOGLE_APPLICATION_CREDENTIALS" {
   type        = string
   sensitive   = true
 }
+variable "TBotTOKEN" {
+  description = "Token for telegram bot"
+  type        = string
+  sensitive   = true
+}
