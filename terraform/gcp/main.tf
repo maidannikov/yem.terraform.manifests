@@ -1,12 +1,13 @@
-name         = "py-bots"
-machine_type = "f1-micro"
+ "vm_instance" {
+  name         = "py-bots"
+  machine_type = "f1-micro"
 
-boot_disk {
+  boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2004-lts"
     }
   }
-network_interface {
+ network_interface {
     # A default network is created for all GCP projects
     network = "default"
     access_config {
