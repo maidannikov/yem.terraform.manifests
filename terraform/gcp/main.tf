@@ -32,7 +32,7 @@ cd /home/py-bot/
 
 # Create config.py file with the specified content
 cat <<EOL > /home/py-bot/config.py
-TOKEN = "var.TBotTOKEN"
+TOKEN = "${var.TBotTOKEN}" 
 FILE_NAME = "notification.json"
 EOL
 
