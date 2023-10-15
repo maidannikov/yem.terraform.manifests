@@ -23,6 +23,5 @@ metadata_startup_script = <<-EOF
     git clone https://github.com/Emaydannikov/reminder.python.telegrambot.git /home/py-bot/
     cd /home/py-bot/
     pip install -r requirements.txt
-    python3 bot.py
     EOF
 }
