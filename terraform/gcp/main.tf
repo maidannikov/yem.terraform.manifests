@@ -16,13 +16,13 @@ resource "google_compute_instance" "vm_instance" {
 metadata_startup_script = <<-EOF
     #!/bin/bash
     apt-get update
+    apt-get upgrade -y
     apt-get install -y git
     apt-get install -y pip
     apt-get install -y python3-full
-    apt-get install -y sqlite3 
     git clone https://github.com/Emaydannikov/reminder.python.telegrambot.git /home/py-bot/
     cd /home/py-bot/
     pip install -r requirements.txt
-    pip
+    python3 bot.py
     EOF
 }
