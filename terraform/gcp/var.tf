@@ -13,3 +13,9 @@ variable "GCPSSHKEYPUB" {
   type        = string
   sensitive   = true
 }
+
+variable "GCPSSHKEY" {
+  description = "Private SSH key"
+  type        = string
+  sensitive   = true
+}
