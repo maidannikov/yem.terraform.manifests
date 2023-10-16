@@ -14,6 +14,10 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 
+metadata = {
+    ssh-keys = "emaydannikov:${var.GCPSSHKEY}"
+}
+
 metadata_startup_script = <<-EOF
 #!/bin/bash
 
@@ -33,7 +37,7 @@ cd /home/py-bot/
 # Create config.py file with the specified content
 cat <<EOL > /home/py-bot/config.py
 TOKEN = "${var.TBotTOKEN}" 
-FILE_NAME = "notification.json"
+FILE_NAME = "db.json"
 EOL
 
 # Install Python dependencies
@@ -59,4 +63,9 @@ EOL
 sudo systemctl enable my_telegram_bot.service
 sudo systemctl start my_telegram_bot.service
 EOF
+}
+
+output "instance_external_ip" {
+  description = "The external IP of the VM instance."
+  value       = google_compute_instance.default.network_interface[0].access_config[0].nat_ip
 }
