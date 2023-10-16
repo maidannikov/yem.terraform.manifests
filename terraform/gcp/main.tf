@@ -15,7 +15,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
 metadata = {
-    ssh-keys = "emaydannikov:${var.GCPSSHKEY}"
+    ssh-keys = "emaydannikov:${var.GCPSSHKEYPUB}"
 }
 
 metadata_startup_script = <<-EOF
