@@ -9,7 +9,7 @@ variable "TBotTOKEN" {
   sensitive   = true
 }
 variable "GCPSSHKEYPUB" {
-  description = "Token for telegram bot"
+  description = "Public SSH key"
   type        = string
   sensitive   = true
 }
