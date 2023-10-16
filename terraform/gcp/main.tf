@@ -61,6 +61,8 @@ EOL
 # Enable and start the bot service
 sudo systemctl enable my_telegram_bot.service
 sudo systemctl start my_telegram_bot.service
+sleep 30
+sudo systemctl start my_telegram_bot.service
 EOF
 }
 
