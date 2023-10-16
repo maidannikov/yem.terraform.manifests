@@ -8,7 +8,7 @@ variable "TBotTOKEN" {
   type        = string
   sensitive   = true
 }
-variable "GCPSSHKEY" {
+variable "GCPSSHKEYPUB" {
   description = "Token for telegram bot"
   type        = string
   sensitive   = true
