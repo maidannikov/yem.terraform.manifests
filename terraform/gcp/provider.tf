@@ -10,6 +10,6 @@ terraform {
 provider "google" {
   credentials = var.GOOGLE_APPLICATION_CREDENTIALS
   project = "midyear-gift-395510" 
-  region  = "europe-central2"
-  zone    = "europe-central2-a"
+  region  = "europe-east1"
+  zone    = "europe-east1-b"
 }
