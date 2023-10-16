@@ -1,6 +1,6 @@
 resource "google_compute_instance" "vm_instance" {
-  name         = "ubuntu-2004-f1"
-  machine_type = "f1-micro"
+  name         = "py-bots"
+  machine_type = "custom-2-2048"
 
   boot_disk {
     initialize_params {
