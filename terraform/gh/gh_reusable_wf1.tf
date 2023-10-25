@@ -16,7 +16,7 @@ resource "github_repository" "Reusable_WF1" {
   is_template                             = false
   merge_commit_message                    = "PR_TITLE"
   merge_commit_title                      = "MERGE_MESSAGE"
-  name                                    = "sshcopy.reusable.workflow"
+  name                                    = "workflow.ssh.copy"
   squash_merge_commit_message             = "COMMIT_MESSAGES"
   squash_merge_commit_title               = "COMMIT_OR_PR_TITLE"
   topics                                  = []
