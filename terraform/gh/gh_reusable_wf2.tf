@@ -16,7 +16,7 @@ resource "github_repository" "Reusable_WF2" {
   is_template                             = false
   merge_commit_message                    = "PR_TITLE"
   merge_commit_title                      = "MERGE_MESSAGE"
-  name                                    = "sshcommand.reusable.workflow"
+  name                                    = "workflow.ssh.execute"
   squash_merge_commit_message             = "COMMIT_MESSAGES"
   squash_merge_commit_title               = "COMMIT_OR_PR_TITLE"
   topics                                  = []
