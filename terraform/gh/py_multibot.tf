@@ -1,4 +1,4 @@
-resource "github_repository" "Riminder_bot" {
+resource "github_repository" "Multi_bot" {
   allow_auto_merge                        = false
   allow_merge_commit                      = true
   allow_rebase_merge                      = true
