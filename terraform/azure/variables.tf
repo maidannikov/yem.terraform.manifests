@@ -70,3 +70,8 @@ variable "tags" {
     owner = "yem"
   }
 }
+
+variable "ad_group_object_id" {
+  type        = string
+  default     = "25fe6bb4-7be3-4703-9298-411c133594c0"
+}
