@@ -23,13 +23,14 @@ resource "azurerm_service_plan" "webapp-sp" {
 }
 
 resource "azurerm_linux_web_app" "webapp" {
-  name                = var.web_app_name
+  name                = "wfmonitor"
   location            = azurerm_resource_group.acr-rg.location
   resource_group_name = azurerm_resource_group.acr-rg.name
   service_plan_id     = azurerm_service_plan.webapp-sp.id
 
   site_config {
-    linux_fx_version = "PYTHON|3.10"
+    application_stack {
+      python_version = "3.10"
+    }
   }
-  tags = var.tags
 }
