@@ -30,3 +30,31 @@ variable "location" {
   type        = string
   default     = "uksouth"
 }
+
+variable "acr_name" {
+  description = "The name of the Azure Container Registry"
+  type        = string
+  default = "yemacr"
+}
+
+variable "acr_sku" {
+  description = "The SKU of the Azure Container Registry (e.g., Basic, Standard, Premium)"
+  type        = string
+  default     = "Basic"
+}
+
+variable "admin_enabled" {
+  description = "Enable admin user for ACR"
+  type        = bool
+  default     = true
+}
+
+variable "tags" {
+  description = "A map of tags to assign to the resource"
+  type        = map(string)
+  default     = {
+    environment = "dev"
+    createdby = "terraform"
+    owner = "yem"
+  }
+}
