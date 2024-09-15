@@ -15,7 +15,12 @@ resource "azurerm_linux_web_app" "webapp" {
 
   site_config {
     application_stack {
-      python_version = "3.10"
+      docker_image {
+        image_name       = "${azurerm_container_registry.acr.login_server}/${var.web_app_name}:latest"
+        registry_url     = azurerm_container_registry.acr.login_server
+        registry_username = azurerm_container_registry.acr.admin_username
+        registry_password = azurerm_container_registry.acr.admin_password
+      }
     }
   }
 
