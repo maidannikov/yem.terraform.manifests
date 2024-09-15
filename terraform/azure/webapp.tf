@@ -19,23 +19,14 @@ resource "azurerm_linux_web_app" "webapp" {
     }
   }
 
-  auth_settings_v2 {
-    platform {
-      enabled = true
-    }
-    identity_providers {
-      azure_active_directory {
-        enabled = true
-        registration {
-          client_id     = var.client_id
-          client_secret_setting_name = var.client_secret
-        }
-        login {
-          allowed_groups = [
-            var.ad_group_object_id
-          ]
-        }
-      }
+  auth_settings {
+    enabled = true
+    active_directory {
+      client_id     = var.client_id
+      client_secret = var.client_secret
+      allowed_audiences = [
+        "https://${var.web_app_name}.azurewebsites.net"
+      ]
     }
   }
 }
