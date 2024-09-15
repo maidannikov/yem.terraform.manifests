@@ -49,6 +49,18 @@ variable "admin_enabled" {
   default     = true
 }
 
+variable "app_service_plan_name" {
+  description = "The name of the App Service Plan"
+  type        = string
+  default     = "wfmonitor-sp"
+}
+
+variable "web_app_name" {
+  description = "The name of the Web App"
+  type        = string
+  default     = "wfmonitor"
+}
+
 variable "tags" {
   description = "A map of tags to assign to the resource"
   type        = map(string)
