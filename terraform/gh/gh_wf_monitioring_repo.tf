@@ -7,7 +7,6 @@ resource "github_repository" "GH_WF_MONITOR" {
   archived                    = false
   auto_init                   = false
   delete_branch_on_merge      = false
-  default_branch = "master"
   description                 = "PY tool to show the list of gh workflows and their status"
   has_discussions             = false
   has_downloads               = true
@@ -21,6 +20,7 @@ resource "github_repository" "GH_WF_MONITOR" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
   topics                      = []
+  github_branch_default       = "master"
   visibility                  = "public"
   vulnerability_alerts        = false
   security_and_analysis {

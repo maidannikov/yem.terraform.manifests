@@ -20,6 +20,7 @@ resource "github_repository" "DOCKER_BUILD_PUSH" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
   topics                      = []
+  github_branch_default       = "master"
   visibility                  = "public"
   vulnerability_alerts        = false
   security_and_analysis {
