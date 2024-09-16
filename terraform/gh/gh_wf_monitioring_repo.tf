@@ -6,8 +6,8 @@ resource "github_repository" "GH_WF_MONITOR" {
   allow_update_branch         = false
   archived                    = false
   auto_init                   = false
-  delete_branch_on_merge      = false
-  description                 = "PY tool to show the list of gh workflows and their status"
+  delete_branch_on_merge      = true
+  description                 = "Python tool to show the list of gh workflows and their status"
   has_discussions             = false
   has_downloads               = true
   has_issues                  = true
@@ -20,7 +20,6 @@ resource "github_repository" "GH_WF_MONITOR" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
   topics                      = []
-  github_branch_default       = "master"
   visibility                  = "public"
   vulnerability_alerts        = false
   security_and_analysis {
@@ -31,4 +30,14 @@ resource "github_repository" "GH_WF_MONITOR" {
       status = "disabled"
     }
   }
+}
+
+resource "github_branch" "master" {
+  repository = github_repository.GH_WF_MONITOR.name
+  branch     = "master"
+}
+
+resource "github_branch_default" "default"{
+  repository = github_repository.GH_WF_MONITOR.name
+  branch     = github_branch.master.branch
 }

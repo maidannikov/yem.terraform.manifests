@@ -20,7 +20,6 @@ resource "github_repository" "GH_TO_AZURE_SYNC" {
   squash_merge_commit_message = "COMMIT_MESSAGES"
   squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
   topics                      = []
-  github_branch_default       = "master"
   visibility                  = "public"
   vulnerability_alerts        = false
   security_and_analysis {
@@ -31,4 +30,14 @@ resource "github_repository" "GH_TO_AZURE_SYNC" {
       status = "disabled"
     }
   }
+}
+
+resource "github_branch" "master" {
+  repository = github_repository.GH_TO_AZURE_SYNC.name
+  branch     = "master"
+}
+
+resource "github_branch_default" "default"{
+  repository = github_repository.GH_TO_AZURE_SYNC.name
+  branch     = github_branch.master.branch
 }
