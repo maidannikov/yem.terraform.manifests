@@ -1,4 +1,4 @@
-resource "github_repository" "GH_TO_AZURE_SYNC" {
+resource "github_repository" "DOCKER_BUILD_PUSH" {
   allow_auto_merge            = false
   allow_merge_commit          = true
   allow_rebase_merge          = true
@@ -7,7 +7,7 @@ resource "github_repository" "GH_TO_AZURE_SYNC" {
   archived                    = false
   auto_init                   = false
   delete_branch_on_merge      = false
-  description                 = "Repo for docker build and push to acr"
+  description                 = "Repo for workflow docker build and push to acr"
   has_discussions             = false
   has_downloads               = true
   has_issues                  = true
