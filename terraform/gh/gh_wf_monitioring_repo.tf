@@ -7,6 +7,7 @@ resource "github_repository" "GH_WF_MONITOR" {
   archived                    = false
   auto_init                   = false
   delete_branch_on_merge      = false
+  default_branch = "master"
   description                 = "PY tool to show the list of gh workflows and their status"
   has_discussions             = false
   has_downloads               = true
