@@ -5,7 +5,7 @@ resource "github_repository" "DOCKER_BUILD_PUSH" {
   allow_squash_merge          = true
   allow_update_branch         = false
   archived                    = false
-  auto_init                   = false
+  auto_init                   = true
   delete_branch_on_merge      = false
   description                 = "Repo for workflow docker build and push to acr"
   has_discussions             = false

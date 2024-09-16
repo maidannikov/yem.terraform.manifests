@@ -5,7 +5,7 @@ resource "github_repository" "GH_TO_AZURE_SYNC" {
   allow_squash_merge          = true
   allow_update_branch         = false
   archived                    = false
-  auto_init                   = false
+  auto_init                   = true
   delete_branch_on_merge      = false
   description                 = "Repo for PS tool to sync files from repo to azure storage account"
   has_discussions             = false

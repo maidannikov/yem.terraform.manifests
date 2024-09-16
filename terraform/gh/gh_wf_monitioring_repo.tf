@@ -5,7 +5,7 @@ resource "github_repository" "GH_WF_MONITOR" {
   allow_squash_merge          = true
   allow_update_branch         = false
   archived                    = false
-  auto_init                   = false
+  auto_init                   = true
   delete_branch_on_merge      = true
   description                 = "Python tool to show the list of gh workflows and their status"
   has_discussions             = false
