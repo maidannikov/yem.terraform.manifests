@@ -22,7 +22,7 @@ variable "subscription_id" {
 variable "resource_group_name" {
   description = "The name of the resource group"
   type        = string
-  default     = "tfc-cloud-resources"
+  default     = "acr-rg"
 }
 
 variable "location" {
@@ -49,18 +49,6 @@ variable "admin_enabled" {
   default     = true
 }
 
-variable "app_service_plan_name" {
-  description = "The name of the App Service Plan"
-  type        = string
-  default     = "wfmonitor-sp"
-}
-
-variable "web_app_name" {
-  description = "The name of the Web App"
-  type        = string
-  default     = "wfmonitor"
-}
-
 variable "tags" {
   description = "A map of tags to assign to the resource"
   type        = map(string)
@@ -69,9 +57,4 @@ variable "tags" {
     createdby = "terraform"
     owner = "yem"
   }
-}
-
-variable "ad_group_object_id" {
-  type        = string
-  default     = "25fe6bb4-7be3-4703-9298-411c133594c0"
 }
