@@ -32,12 +32,12 @@ resource "github_repository" "GH_TO_AZURE_SYNC" {
   }
 }
 
-resource "github_branch" "master" {
+resource "github_branch" "master_az_sync" {
   repository = github_repository.GH_TO_AZURE_SYNC.name
   branch     = "master"
 }
 
-resource "github_branch_default" "default"{
+resource "github_branch_default" "default_az_sync"{
   repository = github_repository.GH_TO_AZURE_SYNC.name
-  branch     = github_branch.master.branch
+  branch     = github_branch.master_az_sync.branch
 }

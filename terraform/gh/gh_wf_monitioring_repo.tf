@@ -32,12 +32,12 @@ resource "github_repository" "GH_WF_MONITOR" {
   }
 }
 
-resource "github_branch" "master" {
+resource "github_branch" "master_wf_monitor" {
   repository = github_repository.GH_WF_MONITOR.name
   branch     = "master"
 }
 
-resource "github_branch_default" "default"{
+resource "github_branch_default" "default_wf_monitor"{
   repository = github_repository.GH_WF_MONITOR.name
-  branch     = github_branch.master.branch
+  branch     = github_branch.master_wf_monitor.branch
 }

@@ -32,12 +32,12 @@ resource "github_repository" "DOCKER_BUILD_PUSH" {
   }
 }
 
-resource "github_branch" "master" {
+resource "github_branch" "master_docker" {
   repository = github_repository.DOCKER_BUILD_PUSH.name
   branch     = "master"
 }
 
-resource "github_branch_default" "default"{
+resource "github_branch_default" "default_docker"{
   repository = github_repository.DOCKER_BUILD_PUSH.name
-  branch     = github_branch.master.branch
+  branch     = github_branch.master_docker.branch
 }
