@@ -7,7 +7,7 @@ resource "github_repository" "GH_WF_CLEANUP" {
   archived                    = false
   auto_init                   = true
   delete_branch_on_merge      = true
-  description                 = "Azure VM cleanup"
+  description                 = "Azure Resource Group Cleanup Reusable Workflow"
   has_discussions             = false
   has_downloads               = true
   has_issues                  = true
