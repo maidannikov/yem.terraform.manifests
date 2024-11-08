@@ -41,11 +41,13 @@ resource "github_branch" "dev_wf_create" {
 
 resource "null_resource" "delete_main_branch" {
   provisioner "local-exec" {
-    command = "gh repo delete-branch ${github_repository.GH_WF_CREATE.name} main"
-    environment = {
-      GITHUB_TOKEN = var.github_token
-    }
+    command = <<EOT
+      curl -X DELETE \
+      -H "Authorization: token ${var.github_token}" \
+      -H "Accept: application/vnd.github.v3+json" \
+      https://api.github.com/repos/${var.github_owner}/${github_repository.GH_WF_CREATE.name}/git/refs/heads/main
+    EOT
   }
 
-  depends_on = [github_branch.dev_wf_create, github_branch_default.default_wf_create]
+  depends_on = [github_branch.dev_wf_create, github_branch_default.default_branch]
 }
