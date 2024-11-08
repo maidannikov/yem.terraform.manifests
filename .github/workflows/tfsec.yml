@@ -1,47 +1,14 @@
-name: Terraform Lint and Validate
+name: terraform-lint
 
-on:
-  push:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
-  terraform-lint:
-    name: Lint and Validate All Terraform Files
+  delivery:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.9.8
-
-      - name: Find and Validate Terraform Directories
-        run: |
-          # Find all directories containing .tf files
-          for dir in $(find . -type f -name "*.tf" -exec dirname {} \; | sort -u); do
-            echo "Processing directory: $dir"
-            cd "$dir"
-
-            # Initialize Terraform without backend
-            terraform init -backend=false
-            
-            # Check Terraform formatting
-            UNFORMATTED_FILES=$(terraform fmt -check -recursive -list=true)
-            if [ -n "$UNFORMATTED_FILES" ]; then
-              echo "Warning: The following files in $dir need formatting:"
-              echo "$UNFORMATTED_FILES" | awk '{print "  - " $0}'
-            fi
-            
-            # Validate Terraform configuration
-            if ! terraform validate; then
-              echo "Error: Found configuration errors in $dir."
-              exit 1
-            fi
-            
-            # Return to the root directory
-            cd - > /dev/null
-          done
+    - name: Check out code
+      uses: actions/checkout@main
+    - name: Lint Terraform
+      uses: actionshub/terraform-lint@main
