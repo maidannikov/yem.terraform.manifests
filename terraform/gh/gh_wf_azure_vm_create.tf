@@ -38,3 +38,14 @@ resource "github_branch" "dev_wf_create" {
   branch     = "dev"
   source_branch = github_branch.master_wf_create.branch 
 }
+
+resource "null_resource" "delete_main_branch" {
+  provisioner "local-exec" {
+    command = "gh repo delete-branch ${github_repository.GH_WF_CREATE.name} main"
+    environment = {
+      GITHUB_TOKEN = var.github_token
+    }
+  }
+
+  depends_on = [github_branch.dev_wf_create, github_branch_default.default_branch]
+}
