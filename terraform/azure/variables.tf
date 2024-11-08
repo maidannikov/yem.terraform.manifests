@@ -34,7 +34,7 @@ variable "location" {
 variable "acr_name" {
   description = "The name of the Azure Container Registry"
   type        = string
-  default = "yemacr"
+  default     = "yemacr"
 }
 
 variable "acr_sku" {
@@ -52,9 +52,9 @@ variable "admin_enabled" {
 variable "tags" {
   description = "A map of tags to assign to the resource"
   type        = map(string)
-  default     = {
+  default = {
     environment = "dev"
-    createdby = "terraform"
-    owner = "yem"
+    createdby   = "terraform"
+    owner       = "yem"
   }
 }

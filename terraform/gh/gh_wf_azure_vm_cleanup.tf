@@ -37,7 +37,7 @@ resource "github_branch" "master_wf_cleanup" {
   branch     = "master"
 }
 
-resource "github_branch_default" "default_wf_cleanup"{
+resource "github_branch_default" "default_wf_cleanup" {
   repository = github_repository.GH_WF_CLEANUP.name
   branch     = github_branch.master_wf_cleanup.branch
 }

@@ -37,7 +37,7 @@ resource "github_branch" "master_docker" {
   branch     = "master"
 }
 
-resource "github_branch_default" "default_docker"{
+resource "github_branch_default" "default_docker" {
   repository = github_repository.DOCKER_BUILD_PUSH.name
   branch     = github_branch.master_docker.branch
 }

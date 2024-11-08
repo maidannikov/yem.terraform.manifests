@@ -37,7 +37,7 @@ resource "github_branch" "master_wf_create" {
   branch     = "master"
 }
 
-resource "github_branch_default" "default_wf_create"{
+resource "github_branch_default" "default_wf_create" {
   repository = github_repository.GH_WF_CREATE.name
   branch     = github_branch.master_wf_create.branch
 }
