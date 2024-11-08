@@ -38,7 +38,7 @@ resource "github_branch" "master_tgbot_summ" {
   branch     = "master"
 }
 
-resource "github_branch_default" "default_wf_create" {
+resource "github_branch_default" "default_tgbot_summ" {
   repository = github_repository.gh_bot_summ.name
   branch     = github_branch.master_tgbot_summ.branch
 }

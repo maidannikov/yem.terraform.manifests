@@ -7,5 +7,5 @@ variable "github_token" {
 variable "github_owner" {
   description = "GitHub personal access owner"
   type        = string
-  default = "maidannikov"
+  default     = "maidannikov"
 }
