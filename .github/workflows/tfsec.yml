@@ -21,12 +21,27 @@ jobs:
 
       - name: Find and Validate Terraform Directories
         run: |
+          # Find all directories containing .tf files
           for dir in $(find . -type f -name "*.tf" -exec dirname {} \; | sort -u); do
             echo "Processing directory: $dir"
             cd "$dir"
-            
+
+            # Initialize Terraform without backend
             terraform init -backend=false
-            terraform fmt -check -recursive
-            terraform validate
+            
+            # Check Terraform formatting
+            if ! terraform fmt -check -recursive; then
+              echo "Error: Found files in $dir that need formatting."
+              terraform fmt -recursive
+              exit 1
+            fi
+            
+            # Validate Terraform configuration
+            if ! terraform validate; then
+              echo "Error: Found configuration errors in $dir."
+              exit 1
+            fi
+            
+            # Return to the root directory
             cd - > /dev/null
           done
