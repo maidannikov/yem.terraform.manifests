@@ -32,7 +32,8 @@ jobs:
             # Check Terraform formatting
             if ! terraform fmt -check -recursive; then
               echo "Error: Found files in $dir that need formatting."
-              terraform fmt -recursive
+              # List files that require formatting for easier debugging
+              terraform fmt -recursive -list=true
               exit 1
             fi
             
