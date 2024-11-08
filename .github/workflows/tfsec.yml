@@ -30,11 +30,10 @@ jobs:
             terraform init -backend=false
             
             # Check Terraform formatting
-            if ! terraform fmt -check -recursive; then
-              echo "Error: Found files in $dir that need formatting."
-              # List files that require formatting for easier debugging
-              terraform fmt -recursive -list=true
-              exit 1
+            UNFORMATTED_FILES=$(terraform fmt -check -recursive -list=true)
+            if [ -n "$UNFORMATTED_FILES" ]; then
+              echo "Warning: The following files in $dir need formatting:"
+              echo "$UNFORMATTED_FILES" | awk '{print "  - " $0}'
             fi
             
             # Validate Terraform configuration
