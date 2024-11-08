@@ -1,14 +1,15 @@
-name: terraform-lint
+name: Terraform Lint
 
 on: [push, pull_request]
 
 jobs:
-  delivery:
+  CheckTFcode:
 
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out code
       uses: actions/checkout@main
+
     - name: Lint Terraform
       uses: actionshub/terraform-lint@main
