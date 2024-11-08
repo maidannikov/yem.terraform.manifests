@@ -1,4 +1,4 @@
-name: terraform-lint
+name: Terraform Lint
 
 on: [push, pull_request]
 
@@ -10,5 +10,6 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@main
+      
     - name: Lint Terraform
       uses: actionshub/terraform-lint@main
