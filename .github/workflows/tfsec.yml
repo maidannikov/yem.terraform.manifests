@@ -1,38 +1,32 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: tfsec
+name: Terraform Lint and Validate
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: '18 0 * * 0'
+    branches:
+      - master
 
 jobs:
-  tfsec:
-    name: Run tfsec sarif report
+  terraform-lint:
+    name: Lint and Validate All Terraform Files
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
 
     steps:
-      - name: Clone repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run tfsec
-        uses: aquasecurity/tfsec-sarif-action@9a83b5c3524f825c020e356335855741fd02745f
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
         with:
-          sarif_file: tfsec.sarif
+          terraform_version: 1.9.8
 
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: tfsec.sarif
+      - name: Find and Validate Terraform Directories
+        run: |
+          for dir in $(find . -type f -name "*.tf" -exec dirname {} \; | sort -u); do
+            echo "Processing directory: $dir"
+            cd "$dir"
+            
+            terraform init -backend=false
+            terraform fmt -check -recursive
+            terraform validate
+            cd - > /dev/null
+          done
