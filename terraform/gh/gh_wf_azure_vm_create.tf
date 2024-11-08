@@ -49,5 +49,5 @@ resource "null_resource" "delete_main_branch" {
     EOT
   }
 
-  depends_on = [github_branch.dev_wf_create, github_branch_default.default_branch]
+  depends_on = [github_branch.dev_wf_create]
 }

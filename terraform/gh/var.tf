@@ -3,3 +3,9 @@ variable "github_token" {
   type        = string
   sensitive   = true
 }
+
+variable "github_owner" {
+  description = "GitHub personal access owner"
+  type        = string
+  default = "maidannikov"
+}
