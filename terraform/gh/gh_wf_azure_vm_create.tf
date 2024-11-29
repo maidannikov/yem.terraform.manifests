@@ -1,6 +1,6 @@
 resource "github_repository" "GH_WF_CREATE" {
-  name                   = "yem.workflow.azurevmcreate"
-  description            = "Azure VM create"
+  name                   = "yem.workflow.azurevmghrunner"
+  description            = "GitHub Self-Hosted Runner on Azure"
   visibility             = "public"
   allow_auto_merge       = false
   allow_merge_commit     = true
